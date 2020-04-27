@@ -1,4 +1,3 @@
-import 'package:cursoflutterseccion6/pages/alert_page.dart';
 import 'package:cursoflutterseccion6/utils/icono_string_util.dart';
 import 'package:flutter/material.dart';
 import 'package:cursoflutterseccion6/providers/menu_provider.dart';
@@ -17,6 +16,7 @@ class HomePage extends StatelessWidget {
   Widget _lista(BuildContext context) {
     return FutureBuilder(
       future: menuProvider.cargarData(),
+      initialData: [],
       builder: (context, AsyncSnapshot<List<dynamic>> snapShot) {
         return ListView(
           children: _listaItems(snapShot.data, context),
